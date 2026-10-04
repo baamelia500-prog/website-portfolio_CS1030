@@ -1,0 +1,6 @@
+#.gitignore file tells Git which files and folders to ignore (not track).
+# This is useful for keeping log files, temporary files, build artifacts, or personal files out of your repository.
+# Use when
+# - you want to keep sensitive, local, or unnecessary files out of your repository
+# - sharing a project with others and want to avoid cluttering Git history
+# - working with build tools or editors that create extra files
