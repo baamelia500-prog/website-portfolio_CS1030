@@ -1,4 +1,11 @@
-/* Created two EQUAL columns */
+body {
+
+    font-family: sans-serif;
+    padding: 2rem;
+    background-color: powderblue;
+    color: #333;
+
+    /* Created two EQUAL columns */
     .column {
         float: left;
         width: 50%;
@@ -10,3 +17,5 @@
         display: table;
         clear: both;
     }
+
+}
