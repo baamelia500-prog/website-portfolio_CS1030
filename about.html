@@ -12,15 +12,29 @@
     rel="stylesheet">
 
     <!-- My stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="C:\GitHubRepos\website-portfolio_CS1030\css\style.css">
 
 </head>
 
+
 <!-- Page content below -->
-<body>
-    <!-- The shared menu is loaded here from nav.html. -->
-    <div id="nav"></div>
-    <script src="include.js" defer></script>
+<body style="height:1500px">
+
+    <div id="nav-placeholder"></div>
+
+    <div class="container-fluid" style="margin-top:80px">
+        <h3>Top Fixed Navbar</h3>
+        <p>A fixed navigation bar stays visible in a fixed position (top or bottom) independent of the page scroll.</p>
+        <h1>Scroll this page to see the effect</h1>
+    </div>
+
+    <script>
+        fetch('nav.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            });
+    </script>
 
 
 </body>

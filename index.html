@@ -2,7 +2,14 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Home - Amelia's Portfolio</title>
+
+    <!-- Adds icons for buttons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+        rel="stylesheet"/>
 
     <!-- Adds responsive web design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +19,7 @@
     rel="stylesheet">
 
     <!-- My stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- Code for the two columns-->
     <style>
@@ -25,7 +32,6 @@
         float: left;
         width: 50%;
         padding: 10px;
-          height: 300px; /* Should be removed. Only for demonstration */
         }
         
         /* Clear floats after the columns */
@@ -39,27 +45,43 @@
 
 
 <!-- Page content below -->
-<body>
-    <!-- The shared menu is loaded here from nav.html. -->
-    <div id="nav"></div>
-    <script src="include.js"></script>
+<body style="height:1500px">
+    <div class="container-fluid" style="margin-top:80px">
     
-    <div class="row">
-        <div class="column">
-            <p> Hello! I'm.. </p>
-            <h2> Amelia Miller </h2>
-            <h5> Cybersecurity Student Digital Artist</h5>
+    <div id="nav-placeholder"></div>
+    
+        <div class="row">
+            <div class="column">
+                <p> Hello! I'm.. </p>
+                <h1> Amelia Miller </h1>
+                <h3 style="margin-bottom: 30px;"> Cybersecurity Student | Digital Artist</h3>
+                <p> I am a heavy visual learner and detail-orientated 
+                    while also being open to learning and collaborating with others. </p>
+            </div>
 
-            <p> I am a heavy visual learner and detail-orientated 
-                while also being open to learning and collaborating with others. </p>
-        </div>
-
-        <div class="column">
-            <h2>Column 2</h2>
-            <p>Some text..</p>
+            <div class="column">
+                <div class="img-box">
+                <img src="https://i.postimg.cc/CMjy45VG/IMG-8668.jpg" alt="Image of Amelia Miller">
+                </div>
+                <div class="download-social"
+                    <div class="social-icons">
+                        <a href="https://github.com/baamelia500-prog"><i class=ri-github-fill></i></a>
+                        <a href="https://www.linkedin.com/in/amelia-miller-74a510333/"><i class="ri-linkedin-box-fill"></i></a>
+                        <a href="https://pdflink.to/7650cd36/"><i class="ri-profile-fill"></i></a>
+                    </div>
+            </div>
         </div>
     </div>
+
+    <script>
+        fetch('nav.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            });
+    </script>
 </body>
+
 
 
 </html>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Experience - Amelia's Portfolio</title>
+    <title>Skills - Amelia's Portfolio</title>
 
     <!-- Adds responsive web design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,11 +15,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <!-- Page content below -->
 <body>
-    <!-- The shared menu is loaded here from nav.html. -->
-    <div id="nav"></div>
-    <script src="include.js" defer></script>
+    <div id="nav-placeholder"></div>
+
+    <script>
+        fetch('nav.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+            });
+    </script>
 
 </body>
 
