@@ -1,67 +1,175 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+.container-fluid {
+    position: relative;
+}
+
+/* Background image, fixed to the window with a dark overlay for readability */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        url("https://i.postimg.cc/Kcg9PHBn/peakpx.jpg") center / cover no-repeat;
 }
 
 body {
-    height: 100vh;
-    background-image: url('file:///C:/Users/Moonl/Downloads/Start%20Project%20Glass%20Personal%20Portfolio%20Website/Start%20Project%20Glass%20Personal%20Portfolio%20Website/background.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: auto;
-    height: 100vh; 
+    min-height: 100vh;
+    background-color: #222;   /* fallback while the image loads */
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.125rem;
-    line-height: 1.6;
-    color: #491827;
+    font-size: 1.35rem;
+    line-height: 1.7;
+    color: #faebf0;
+    padding: 80px 6% 80px;
 }
 
-a {
-    color: inherit;
+.divider {
+    margin: 0 1.25rem;    /* space on the left and right of the | in the home page */
 }
 
+/* Headings */
+h1, h2, .brand {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(4rem, 9vw, 8rem);   /* much bigger, scales with the screen */
+    line-height: 1;
+    margin-bottom: 1.5rem;
+}
+
+/* Nav bar */
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 5%;
+    right: 5%;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 18px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.navbar-brand {
+    font-size: 25px;
+    font-weight: 600px;
+}
+
+.navbar a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: .5s;
+    margin-left: 35px;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    border-color: #fff;
+}
+
+/* Keyboard focus outline */
 a:focus-visible {
-    outline: 3px solid #b15151;
+    outline: 3px solid #fff;
     outline-offset: 3px;
 }
 
-h1, h2, .brand {
-    font-family: Georgia, "Times New Roman", serif;
-    font-weight: normal;
+/* Glowing circle image (vertical position comes from align-items-center on the row) */
+.img-box {
+    width: min(100%, 460px);
+    aspect-ratio: 1;
+    margin: 0 0 0 auto;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow:
+        0 0 15px rgba(255, 255, 255, 0.8),
+        0 0 40px rgba(255, 255, 255, 0.5),
+        0 0 80px rgba(255, 255, 255, 0.3);
 }
 
-header {
-    position: absolute;
-    top: 0;
-    left: 0;
+.img-box img {
+    display: block;
     width: 100%;
-    padding: 25px 5%;
-    background: #131041;
+    height: 100%;
+    object-fit: cover;    /* fills the circle without stretching the photo */
 }
 
-/* Nav bar animation */
-nav {
+/* Buttons */
+.hero-buttons {
     display: flex;
     flex-wrap: wrap;
-    border-bottom: 3px solid #8a4949;
+    gap: 1.25rem;
+    margin-top: 2rem;
 }
 
-nav a {
-    padding: 1.25rem 1.75rem;
-    border-left: 3px;
+.hero-btn {
+    padding: 0.75rem 2rem;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.hero-btn:hover,
+.hero-btn:focus-visible {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+}
+
+/* Social links: each icon in a white circle, label underneath */
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-top: 2.5rem;
+}
+
+.social-icons a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    font-size: 1.1rem;
     text-decoration: none;
 }
 
-nav .brand {
-    margin-right: auto;
-    border-left: 0;
-    font-size: 1.5rem;
+.social-icons i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    font-size: 2rem;
+    transition: .3s;
 }
 
-nav a:hover,
-nav a.active {
-    background: #616161;
+.social-icons a:hover i {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
 }
 
+/* Phones: center the circle when the columns stack */
+@media (max-width: 767px) {
+    .img-box {
+        width: min(100%, 320px);
+        margin: 0 auto;
+    }
+}

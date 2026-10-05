@@ -3,74 +3,51 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Amelia's Portfolio</title>
 
-    <!-- Adds icons for buttons -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
-        rel="stylesheet"/>
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet">
 
-    <!-- Adds responsive web design -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Bootstrap stylesheet -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet">
-
-    <!-- My stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- Code for the two columns-->
-    <style>
-        * {
-        box-sizing: border-box;
-        }
-        
-        /* Create two equal columns that floats next to each other */
-        .column {
-        float: left;
-        width: 50%;
-        padding: 10px;
-        }
-        
-        /* Clear floats after the columns */
-        .row:after {
-        content: "";
-        display: table;
-        clear: both;
-        }
-        </style>
+    <!-- My styles (must come after Bootstrap so they override it) -->
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
-
-<!-- Page content below -->
-<body style="height:1500px">
+<body>
     <div class="container-fluid" style="margin-top:80px">
-    
-    <div id="nav-placeholder"></div>
-    
-        <div class="row">
-            <div class="column">
-                <p> Hello! I'm.. </p>
-                <h1> Amelia Miller </h1>
-                <h3 style="margin-bottom: 30px;"> Cybersecurity Student | Digital Artist</h3>
-                <p> I am a heavy visual learner and detail-orientated 
-                    while also being open to learning and collaborating with others. </p>
+
+        <div id="nav-placeholder"></div>
+
+        <div class="row align-items-center g-5">
+            <div class="col-md-6">
+                <p>Hello! I'm...</p>
+                <h1>Amelia Miller</h1>
+                <h3 style="margin-bottom: 30px;">Cybersecurity Student <span class="divider">|</span> Digital Artist</h3>
+                <p>I am a heavy visual learner and detail-oriented
+                    while also being open to learning and collaborating with others.</p>
+
+                <div class="hero-buttons">
+                    <a class="hero-btn" href="experience.html">View Experience</a>
+                    <a class="hero-btn" href="contact.html">Contact Me</a>
+                </div>
+
+                <div class="social-icons">
+                    <a href="https://github.com/baamelia500-prog">GitHub <i class="ri-github-fill"></i></a>
+                    <a href="https://www.linkedin.com/in/amelia-miller-74a510333/">LinkedIn <i class="ri-linkedin-box-fill"></i></a>
+                    <a href="https://pdflink.to/7650cd36/">Resume <i class="ri-profile-fill"></i></a>
+                </div>
             </div>
 
-            <div class="column">
+            <div class="col-md-6">
                 <div class="img-box">
-                <img src="https://i.postimg.cc/CMjy45VG/IMG-8668.jpg" alt="Image of Amelia Miller">
+                    <img class="img-fluid" src="https://i.postimg.cc/CMjy45VG/IMG-8668.jpg" alt="Image of Amelia Miller">
                 </div>
-                <div class="download-social"
-                    <div class="social-icons">
-                        <a href="https://github.com/baamelia500-prog"><i class=ri-github-fill></i></a>
-                        <a href="https://www.linkedin.com/in/amelia-miller-74a510333/"><i class="ri-linkedin-box-fill"></i></a>
-                        <a href="https://pdflink.to/7650cd36/"><i class="ri-profile-fill"></i></a>
-                    </div>
             </div>
         </div>
+
     </div>
 
     <script>
@@ -81,7 +58,5 @@
             });
     </script>
 </body>
-
-
 
 </html>
