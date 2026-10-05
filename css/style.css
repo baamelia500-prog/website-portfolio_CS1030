@@ -24,16 +24,19 @@ body {
     padding: 80px 6% 80px;
 }
 
-.divider {
-    margin: 0 1.25rem;    /* space on the left and right of the | in the home page */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 /* Headings */
 h1, h2, .brand {
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(4rem, 9vw, 8rem);   /* much bigger, scales with the screen */
-    line-height: 1;
-    margin-bottom: 1.5rem;
+    font-weight: 900;
 }
 
 /* Nav bar */
@@ -66,7 +69,10 @@ h1, h2, .brand {
     text-decoration: none;
     border-bottom: 2px solid transparent;
     transition: .5s;
-    margin-left: 35px;
+}
+
+.navbar .brand {
+    font-size: 1.5rem;
 }
 
 .nav-links {
@@ -172,4 +178,212 @@ a:focus-visible {
         width: min(100%, 320px);
         margin: 0 auto;
     }
+}
+
+.page-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-size: clamp(3rem, 7vw, 5rem);
+    margin-bottom: 2rem;
+}
+
+.page-content h2 {
+    margin: 2.5rem 0 1rem;
+}
+
+/* Links inside pages stay white and underlined so they are easy to spot */
+main a:not(.hero-btn) {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Make Bootstrap components match the transparent white-outline look */
+.card {
+    --bs-card-bg: transparent;
+    --bs-card-color: #fff;
+    --bs-card-border-color: #fff;
+    --bs-card-border-width: 2px;
+    --bs-card-border-radius: 18px;
+    overflow: hidden;
+}
+
+.card-img-top {
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.list-group {
+    --bs-list-group-bg: transparent;
+    --bs-list-group-color: #fff;
+    --bs-list-group-border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Form fields */
+.form-control {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.form-control:focus {
+    background: transparent;
+    color: #fff;
+    border-color: #fff;
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.4);
+}
+
+
+/* Home page: text and image on the same level */
+.hero-row {
+    align-items: center;
+}
+
+/* Accordion (Bootstrap collapse) on the About page */
+.card-header {
+    background: transparent;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.card-header .btn {
+    width: 100%;
+    text-align: left;
+    color: #fff;
+    font-size: 1.25rem;
+}
+
+#accordion .card {
+    margin-bottom: 1rem;
+}
+
+.card {
+    height: 100%;
+}
+
+/* Pill badges with a white outline */
+.badge {
+    border: 2px solid #fff;
+    margin: 0.15rem;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+/* Checkbox label */
+.form-check-label {
+    color: #fff;
+}
+
+/* Space around the | in "Cybersecurity Student | Digital Artist" */
+.divider {
+    margin: 0 1.25rem;
+}
+
+/* Pill buttons (links and the form's Send button) */
+.hero-btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    background: transparent;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1.1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.hero-btn:hover,
+.hero-btn:focus-visible {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+}
+
+.card-title {
+    margin-top: 0;
+}
+
+/* Contact page: keep every background transparent */
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Stop the browser's autofill from painting a white/yellow background */
+.form-control:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px transparent inset;
+    -webkit-text-fill-color: #fff;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+/* Checkbox: transparent box with a white outline */
+.form-check-input {
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+
+.form-check-input:checked {
+    background-color: transparent;
+    border-color: #fff;
+}
+
+.form-check-input:focus {
+    border-color: #fff;
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.4);
+}
+
+/* Divider bars between subjects: a glowing white line */
+hr {
+    height: 2px;
+    margin: 3rem 0;
+    border: 0;
+    background: #fff;
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 25px rgba(255, 255, 255, 0.4);
+}
+
+hr + h2 {
+    margin-top: 0;
+}
+
+
+/* Glass look for Goals and Skills: white outline, glow, blurred background */
+.glass,
+#accordion .card {
+    border: 2px solid #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.6),
+                0 0 35px rgba(255, 255, 255, 0.25);
+}
+
+#accordion .card-header a::after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+#accordion .card-header a:not(.collapsed)::after {
+    content: "\2212";
+}
+
+/* The list's own outline replaces the item borders on the outside edges */
+.glass .list-group-item {
+    border-left: 0;
+    border-right: 0;
+    background: transparent;
+}
+
+.glass .list-group-item:first-child {
+    border-top: 0;
+}
+
+.glass .list-group-item:last-child {
+    border-bottom: 0;
 }
